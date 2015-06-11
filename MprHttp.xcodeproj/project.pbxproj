@@ -10,6 +10,19 @@
 		7E7361B71B2A4B36007BD5EF /* MprHttp.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E7361B61B2A4B36007BD5EF /* MprHttp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E7361BD1B2A4B36007BD5EF /* MprHttp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7361B11B2A4B36007BD5EF /* MprHttp.framework */; };
 		7E7361C41B2A4B36007BD5EF /* MprHttpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361C31B2A4B36007BD5EF /* MprHttpTests.swift */; };
+		7E7361D81B2A4BB8007BD5EF /* TegDownloaderAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361CD1B2A4BB8007BD5EF /* TegDownloaderAsync.swift */; };
+		7E7361D91B2A4BB8007BD5EF /* TegDownloaderMainQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361CE1B2A4BB8007BD5EF /* TegDownloaderMainQueue.swift */; };
+		7E7361DA1B2A4BB8007BD5EF /* TegHttpErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361CF1B2A4BB8007BD5EF /* TegHttpErrors.swift */; };
+		7E7361DB1B2A4BB8007BD5EF /* TegDownloaderSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361D01B2A4BB8007BD5EF /* TegDownloaderSession.swift */; };
+		7E7361DC1B2A4BB8007BD5EF /* TegHttpContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361D11B2A4BB8007BD5EF /* TegHttpContentType.swift */; };
+		7E7361DD1B2A4BB8007BD5EF /* TegHttpHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361D21B2A4BB8007BD5EF /* TegHttpHeader.swift */; };
+		7E7361DE1B2A4BB8007BD5EF /* TegHttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361D31B2A4BB8007BD5EF /* TegHttpMethod.swift */; };
+		7E7361DF1B2A4BB8007BD5EF /* TegHttpRequestIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361D41B2A4BB8007BD5EF /* TegHttpRequestIdentity.swift */; };
+		7E7361E01B2A4BB8007BD5EF /* TegHttpSensitiveText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361D51B2A4BB8007BD5EF /* TegHttpSensitiveText.swift */; };
+		7E7361E11B2A4BB8007BD5EF /* TegHttpText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361D61B2A4BB8007BD5EF /* TegHttpText.swift */; };
+		7E7361E21B2A4BB8007BD5EF /* TegMockedNSUrlSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361D71B2A4BB8007BD5EF /* TegMockedNSUrlSessionDataTask.swift */; };
+		7E7361E81B2A4BE6007BD5EF /* TegQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361E41B2A4BD1007BD5EF /* TegQ.swift */; };
+		7E7361E91B2A4BF4007BD5EF /* TegString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361E51B2A4BD1007BD5EF /* TegString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +42,19 @@
 		7E7361BC1B2A4B36007BD5EF /* MprHttpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MprHttpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7361C21B2A4B36007BD5EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E7361C31B2A4B36007BD5EF /* MprHttpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MprHttpTests.swift; sourceTree = "<group>"; };
+		7E7361CD1B2A4BB8007BD5EF /* TegDownloaderAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegDownloaderAsync.swift; sourceTree = "<group>"; };
+		7E7361CE1B2A4BB8007BD5EF /* TegDownloaderMainQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegDownloaderMainQueue.swift; sourceTree = "<group>"; };
+		7E7361CF1B2A4BB8007BD5EF /* TegHttpErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpErrors.swift; sourceTree = "<group>"; };
+		7E7361D01B2A4BB8007BD5EF /* TegDownloaderSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegDownloaderSession.swift; sourceTree = "<group>"; };
+		7E7361D11B2A4BB8007BD5EF /* TegHttpContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpContentType.swift; sourceTree = "<group>"; };
+		7E7361D21B2A4BB8007BD5EF /* TegHttpHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpHeader.swift; sourceTree = "<group>"; };
+		7E7361D31B2A4BB8007BD5EF /* TegHttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpMethod.swift; sourceTree = "<group>"; };
+		7E7361D41B2A4BB8007BD5EF /* TegHttpRequestIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpRequestIdentity.swift; sourceTree = "<group>"; };
+		7E7361D51B2A4BB8007BD5EF /* TegHttpSensitiveText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpSensitiveText.swift; sourceTree = "<group>"; };
+		7E7361D61B2A4BB8007BD5EF /* TegHttpText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpText.swift; sourceTree = "<group>"; };
+		7E7361D71B2A4BB8007BD5EF /* TegMockedNSUrlSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegMockedNSUrlSessionDataTask.swift; sourceTree = "<group>"; };
+		7E7361E41B2A4BD1007BD5EF /* TegQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegQ.swift; sourceTree = "<group>"; };
+		7E7361E51B2A4BD1007BD5EF /* TegString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +97,18 @@
 		7E7361B31B2A4B36007BD5EF /* MprHttp */ = {
 			isa = PBXGroup;
 			children = (
+				7E7361E31B2A4BCB007BD5EF /* TegQ */,
+				7E7361CD1B2A4BB8007BD5EF /* TegDownloaderAsync.swift */,
+				7E7361CE1B2A4BB8007BD5EF /* TegDownloaderMainQueue.swift */,
+				7E7361CF1B2A4BB8007BD5EF /* TegHttpErrors.swift */,
+				7E7361D01B2A4BB8007BD5EF /* TegDownloaderSession.swift */,
+				7E7361D11B2A4BB8007BD5EF /* TegHttpContentType.swift */,
+				7E7361D21B2A4BB8007BD5EF /* TegHttpHeader.swift */,
+				7E7361D31B2A4BB8007BD5EF /* TegHttpMethod.swift */,
+				7E7361D41B2A4BB8007BD5EF /* TegHttpRequestIdentity.swift */,
+				7E7361D51B2A4BB8007BD5EF /* TegHttpSensitiveText.swift */,
+				7E7361D61B2A4BB8007BD5EF /* TegHttpText.swift */,
+				7E7361D71B2A4BB8007BD5EF /* TegMockedNSUrlSessionDataTask.swift */,
 				7E7361B61B2A4B36007BD5EF /* MprHttp.h */,
 				7E7361B41B2A4B36007BD5EF /* Supporting Files */,
 			);
@@ -100,6 +138,15 @@
 				7E7361C21B2A4B36007BD5EF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7E7361E31B2A4BCB007BD5EF /* TegQ */ = {
+			isa = PBXGroup;
+			children = (
+				7E7361E41B2A4BD1007BD5EF /* TegQ.swift */,
+				7E7361E51B2A4BD1007BD5EF /* TegString.swift */,
+			);
+			path = TegQ;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +256,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E7361DB1B2A4BB8007BD5EF /* TegDownloaderSession.swift in Sources */,
+				7E7361DE1B2A4BB8007BD5EF /* TegHttpMethod.swift in Sources */,
+				7E7361DF1B2A4BB8007BD5EF /* TegHttpRequestIdentity.swift in Sources */,
+				7E7361E21B2A4BB8007BD5EF /* TegMockedNSUrlSessionDataTask.swift in Sources */,
+				7E7361DC1B2A4BB8007BD5EF /* TegHttpContentType.swift in Sources */,
+				7E7361D91B2A4BB8007BD5EF /* TegDownloaderMainQueue.swift in Sources */,
+				7E7361DD1B2A4BB8007BD5EF /* TegHttpHeader.swift in Sources */,
+				7E7361DA1B2A4BB8007BD5EF /* TegHttpErrors.swift in Sources */,
+				7E7361E91B2A4BF4007BD5EF /* TegString.swift in Sources */,
+				7E7361E11B2A4BB8007BD5EF /* TegHttpText.swift in Sources */,
+				7E7361E81B2A4BE6007BD5EF /* TegQ.swift in Sources */,
+				7E7361E01B2A4BB8007BD5EF /* TegHttpSensitiveText.swift in Sources */,
+				7E7361D81B2A4BB8007BD5EF /* TegDownloaderAsync.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +383,7 @@
 		7E7361C81B2A4B36007BD5EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -332,12 +393,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		7E7361C91B2A4B36007BD5EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
