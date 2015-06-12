@@ -9,3 +9,11 @@ public struct TegHttpHeader {
   public let field: String
   public let value: String
 }
+
+// MARK: Equatable
+
+extension TegHttpHeader: Equatable {}
+
+public func ==(lhs: TegHttpHeader, rhs: TegHttpHeader) -> Bool {
+  return lhs.field == rhs.field && lhs.value == rhs.value
+}
