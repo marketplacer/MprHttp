@@ -25,6 +25,9 @@
 		7E7361E91B2A4BF4007BD5EF /* TegString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361E51B2A4BD1007BD5EF /* TegString.swift */; };
 		7EA61BEB1B2A80A5005395C7 /* TegHttpTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA61BEA1B2A80A5005395C7 /* TegHttpTextTests.swift */; };
 		7EA61BEE1B2A8100005395C7 /* StubHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA61BED1B2A8100005395C7 /* StubHttp.swift */; };
+		7EA61BF11B2A8195005395C7 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA61BF01B2A8195005395C7 /* OHHTTPStubs.framework */; };
+		7EA61BF21B2A81D3005395C7 /* TegString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361E51B2A4BD1007BD5EF /* TegString.swift */; };
+		7EA61BF41B2A8247005395C7 /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EA61BF01B2A8195005395C7 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,19 @@
 			remoteInfo = MprHttp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7EA61BF31B2A823F005395C7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7EA61BF41B2A8247005395C7 /* OHHTTPStubs.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7E7361B11B2A4B36007BD5EF /* MprHttp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MprHttp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +75,7 @@
 		7E7361E51B2A4BD1007BD5EF /* TegString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegString.swift; sourceTree = "<group>"; };
 		7EA61BEA1B2A80A5005395C7 /* TegHttpTextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpTextTests.swift; sourceTree = "<group>"; };
 		7EA61BED1B2A8100005395C7 /* StubHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubHttp.swift; sourceTree = "<group>"; };
+		7EA61BF01B2A8195005395C7 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E7361BD1B2A4B36007BD5EF /* MprHttp.framework in Frameworks */,
+				7EA61BF11B2A8195005395C7 /* OHHTTPStubs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +101,7 @@
 		7E7361A71B2A4B36007BD5EF = {
 			isa = PBXGroup;
 			children = (
+				7EA61BEF1B2A818D005395C7 /* Frameworks */,
 				7E7361B31B2A4B36007BD5EF /* MprHttp */,
 				7E7361C01B2A4B36007BD5EF /* MprHttpTests */,
 				7E7361B21B2A4B36007BD5EF /* Products */,
@@ -163,6 +182,14 @@
 			path = TestHelpers;
 			sourceTree = "<group>";
 		};
+		7EA61BEF1B2A818D005395C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EA61BF01B2A8195005395C7 /* OHHTTPStubs.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -202,6 +229,7 @@
 				7E7361B81B2A4B36007BD5EF /* Sources */,
 				7E7361B91B2A4B36007BD5EF /* Frameworks */,
 				7E7361BA1B2A4B36007BD5EF /* Resources */,
+				7EA61BF31B2A823F005395C7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -291,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EA61BEB1B2A80A5005395C7 /* TegHttpTextTests.swift in Sources */,
+				7EA61BF21B2A81D3005395C7 /* TegString.swift in Sources */,
 				7E7361C41B2A4B36007BD5EF /* MprHttpTests.swift in Sources */,
 				7EA61BEE1B2A8100005395C7 /* StubHttp.swift in Sources */,
 			);
@@ -435,6 +464,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -452,6 +482,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = MprHttpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

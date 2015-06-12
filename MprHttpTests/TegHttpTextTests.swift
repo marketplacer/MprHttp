@@ -63,7 +63,7 @@ class TegHttpTextSpec: XCTestCase {
     XCTAssert(remoteText == nil)
     XCTAssertEqual("Hello", remoteErrorBody!)
     XCTAssertEqual(TegHttpError.Not200FromServer.rawValue, repoteError!.code)
-    XCTAssertEqual("TegHttpError", repoteError!.domain)
+    XCTAssertEqual("MprHttp", repoteError!.domain)
     XCTAssertEqual(422, remoteResponse!.statusCode)
   }
   

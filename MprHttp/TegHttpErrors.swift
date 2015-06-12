@@ -17,7 +17,7 @@ public enum TegHttpError: Int {
   case UnexpectedResponse = 4
 
   public var nsError: NSError {
-    let domain = NSBundle.mainBundle().bundleIdentifier ?? "teg.unknown.domain"
+    let domain = "MprHttp"
     return NSError(domain: domain, code: rawValue, userInfo: nil)
   }
 }

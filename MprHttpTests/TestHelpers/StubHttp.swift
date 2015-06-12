@@ -3,7 +3,6 @@
 //
 
 import OHHTTPStubs
-import YauShop
 
 class StubHttp {
   class func withGreenImage(url: String) {
@@ -21,12 +20,6 @@ class StubHttp {
       return OHHTTPStubsResponse(fileAtPath: imagePath,
         statusCode: 200,
         headers: ["Content-Type": "image/png"])
-    }
-  }
-  
-  class func withJson(jsonFileName: String, forUrlPart url: String) {
-    OHHTTPStubs.stubRequestsPassingTest(forUrlsContaining(url)) { _ in
-      return self.jsonResponse(jsonFileName)
     }
   }
   
@@ -48,26 +41,6 @@ class StubHttp {
     )
   }
   
-  class func forScreen(requestType: TegRequestType) {
-    OHHTTPStubs.stubRequestsPassingTest(forRequestType(requestType)) { _ in
-      let jsonFileName = TegMockedHttpRequests.testJsonFile(requestType)!
-      return self.jsonResponse(jsonFileName)
-    }
-  }
-  
-  class func forScreen(requestType: TegRequestType, withJsonFileName jsonFileName: String) {
-    OHHTTPStubs.stubRequestsPassingTest(forRequestType(requestType)) { _ in
-      return self.jsonResponse(jsonFileName)
-    }
-  }
-  
-  private class func jsonResponse(jsonFileName: String) -> OHHTTPStubsResponse {
-    let filePath = NSBundle.appBundle.pathForResource(jsonFileName, ofType: nil)!
-    
-    return OHHTTPStubsResponse(fileAtPath: filePath,
-      statusCode: 200,
-      headers: ["Content-Type": "application/json"])
-  }
   
   // MARK: - URL matchers
   
@@ -76,22 +49,5 @@ class StubHttp {
       TegString.contains(req.URL!.absoluteString!, substring: urlPart)
     }
   }
-  
-  class func forRequestType(requestType: TegRequestType) -> (NSURLRequest->Bool) {
-    return { req in
-      UrlTemplateMatcher.match(req.URL!.absoluteString!, withRequestType: requestType)
-    }
-  }
-}
 
-class StubHttpWithError {
-  class func forScreen(requestType: TegRequestType) {
-    OHHTTPStubs.stubRequestsPassingTest({
-      UrlTemplateMatcher.match($0.URL!.absoluteString!, withRequestType: requestType)
-      
-      }) { _ in
-        let error = NSError(domain: "test-domain", code: 200, userInfo: nil)
-        return OHHTTPStubsResponse(error: error)
-    }
-  }
 }
