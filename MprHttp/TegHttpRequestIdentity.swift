@@ -49,4 +49,21 @@ public struct TegHttpRequestIdentity
   public var nsUrl: NSURL? {
     return NSURL(string: url)
   }
+  
+  public var urlRequest: NSURLRequest {
+    let request = NSMutableURLRequest()
+    request.URL = nsUrl
+    request.HTTPMethod = method.rawValue
+    request.HTTPBody = requestBody
+    
+    if contentType != TegHttpContentType.Unspecified {
+      request.addValue(contentType.rawValue, forHTTPHeaderField: "Content-Type")
+    }
+    
+    for httpHeader in httpHeaders {
+      request.addValue(httpHeader.value, forHTTPHeaderField: httpHeader.field)
+    }
+    
+    return request
+  }
 }

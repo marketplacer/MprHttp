@@ -23,6 +23,8 @@
 		7E7361E21B2A4BB8007BD5EF /* TegMockedNSUrlSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361D71B2A4BB8007BD5EF /* TegMockedNSUrlSessionDataTask.swift */; };
 		7E7361E81B2A4BE6007BD5EF /* TegQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361E41B2A4BD1007BD5EF /* TegQ.swift */; };
 		7E7361E91B2A4BF4007BD5EF /* TegString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361E51B2A4BD1007BD5EF /* TegString.swift */; };
+		7EA61BEB1B2A80A5005395C7 /* TegHttpTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA61BEA1B2A80A5005395C7 /* TegHttpTextTests.swift */; };
+		7EA61BEE1B2A8100005395C7 /* StubHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA61BED1B2A8100005395C7 /* StubHttp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		7E7361D71B2A4BB8007BD5EF /* TegMockedNSUrlSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegMockedNSUrlSessionDataTask.swift; sourceTree = "<group>"; };
 		7E7361E41B2A4BD1007BD5EF /* TegQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegQ.swift; sourceTree = "<group>"; };
 		7E7361E51B2A4BD1007BD5EF /* TegString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegString.swift; sourceTree = "<group>"; };
+		7EA61BEA1B2A80A5005395C7 /* TegHttpTextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpTextTests.swift; sourceTree = "<group>"; };
+		7EA61BED1B2A8100005395C7 /* StubHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubHttp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,8 @@
 		7E7361C01B2A4B36007BD5EF /* MprHttpTests */ = {
 			isa = PBXGroup;
 			children = (
+				7EA61BEC1B2A80F8005395C7 /* TestHelpers */,
+				7EA61BEA1B2A80A5005395C7 /* TegHttpTextTests.swift */,
 				7E7361C31B2A4B36007BD5EF /* MprHttpTests.swift */,
 				7E7361C11B2A4B36007BD5EF /* Supporting Files */,
 			);
@@ -147,6 +153,14 @@
 				7E7361E51B2A4BD1007BD5EF /* TegString.swift */,
 			);
 			path = TegQ;
+			sourceTree = "<group>";
+		};
+		7EA61BEC1B2A80F8005395C7 /* TestHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				7EA61BED1B2A8100005395C7 /* StubHttp.swift */,
+			);
+			path = TestHelpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +290,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EA61BEB1B2A80A5005395C7 /* TegHttpTextTests.swift in Sources */,
 				7E7361C41B2A4B36007BD5EF /* MprHttpTests.swift in Sources */,
+				7EA61BEE1B2A8100005395C7 /* StubHttp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +478,7 @@
 				7E7361C91B2A4B36007BD5EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E7361CA1B2A4B36007BD5EF /* Build configuration list for PBXNativeTarget "MprHttpTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +487,7 @@
 				7E7361CC1B2A4B36007BD5EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

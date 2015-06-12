@@ -6,8 +6,8 @@
 
 import Foundation
 
-class TegDownloaderAsync {
-  class func load(requestIdentity: TegHttpRequestIdentity,
+public class TegDownloaderAsync {
+  public class func load(requestIdentity: TegHttpRequestIdentity,
     onSuccess: (NSData, NSHTTPURLResponse)->(),
     onError: ((NSError, NSHTTPURLResponse?)->())? = nil,
     onAlways: (()->())? = nil) -> NSURLSessionDataTask? {
