@@ -56,7 +56,7 @@ public class TegDownloaderAsync {
       urlRequest.addValue(httpHeader.value, forHTTPHeaderField: httpHeader.field)
     }
       
-    var task = TegDownloaderSession.session.dataTaskWithRequest(urlRequest) {
+    let task = TegDownloaderSession.session.dataTaskWithRequest(urlRequest) {
       (data, response, error) in
       
       if let httpResponse = response as? NSHTTPURLResponse {

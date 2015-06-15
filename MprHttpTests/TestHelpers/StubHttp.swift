@@ -26,7 +26,7 @@ class StubHttp {
   class func withText(text: String, forUrlPart url: String, statusCode: Int32 = 200) {
     OHHTTPStubs.stubRequestsPassingTest(forUrlsContaining(url)) { _ in
       let data = text.dataUsingEncoding(NSUTF8StringEncoding)!
-      
+            
       return OHHTTPStubsResponse(data: data,
         statusCode: statusCode,
         headers: ["Content-Type": "application/json"])
@@ -44,10 +44,9 @@ class StubHttp {
   
   // MARK: - URL matchers
   
-  class func forUrlsContaining(urlPart:String) -> (NSURLRequest->Bool) {
+  class func forUrlsContaining(urlPart: String) -> (NSURLRequest->Bool) {
     return { req in
-      TegString.contains(req.URL!.absoluteString!, substring: urlPart)
+      TegString.contains(req.URL!.absoluteString, substring: urlPart)
     }
   }
-
 }
