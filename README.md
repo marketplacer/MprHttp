@@ -1,4 +1,4 @@
-# Http helper classes for iOS / Swift
+# HTTP helper classes for iOS / Swift
 
 ## TegHttpText
 
@@ -10,10 +10,10 @@ let httpText = TegHttpText()
 
 httpText.load(identity,
   onSuccess: { text in
-    // Text from remotr
+    // Text from remote
   },
-  onError: { error, reponse, body in
-    // Error occured
+  onError: { error, response, body in
+    // Error occurred
   },
   onAlways: {
     // Always run for error or success
