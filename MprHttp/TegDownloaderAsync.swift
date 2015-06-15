@@ -8,8 +8,8 @@ import Foundation
 
 public class TegDownloaderAsync {
   public class func load(requestIdentity: TegHttpRequestIdentity,
-    onSuccess: (NSData, NSHTTPURLResponse)->(),
-    onError: ((NSError, NSHTTPURLResponse?)->())? = nil,
+    onSuccess: (NSData?, NSHTTPURLResponse)->(),
+    onError: ((NSError?, NSHTTPURLResponse?)->())? = nil,
     onAlways: (()->())? = nil) -> NSURLSessionDataTask? {
       
     if let nsUrl = requestIdentity.nsUrl {
@@ -35,8 +35,8 @@ public class TegDownloaderAsync {
   
   private class func load(nsUrl: NSURL,
     requestIdentity: TegHttpRequestIdentity,
-    onSuccess: (NSData, NSHTTPURLResponse)->(),
-    onError: ((NSError, NSHTTPURLResponse?)->())? = nil,
+    onSuccess: (NSData?, NSHTTPURLResponse)->(),
+    onError: ((NSError?, NSHTTPURLResponse?)->())? = nil,
     onAlways: (()->())? = nil) -> NSURLSessionDataTask? {
 
     if let mockedResponse = requestIdentity.mockedResponse {
@@ -74,14 +74,20 @@ public class TegDownloaderAsync {
       }
     }
       
-    task.resume()
+    task?.resume()
+      
     return task
   }
   
-  private class func processError(error: NSError, httpResponse: NSHTTPURLResponse?,
-    onError: ((NSError, NSHTTPURLResponse?)->())? = nil) {
+  private class func processError(error: NSError?, httpResponse: NSHTTPURLResponse?,
+    onError: ((NSError?, NSHTTPURLResponse?)->())? = nil) {
     
-    println("HTTP Error: \(error.description)")
+    if let error = error {
+      print("HTTP Error: \(error.description)")
+    } else {
+      print("HTTP Error occured")
+    }
+      
     onError?(error, httpResponse)
   }
 
@@ -104,13 +110,13 @@ public class TegDownloaderAsync {
   
   private class func logRequest(requestIdentity: TegHttpRequestIdentity) {
     let mocked = requestIdentity.mockedResponse == nil ? "" : "Mocked "
-    println("HTTP \(mocked)\(requestIdentity.method.rawValue) \(requestIdentity.url)")
+    print("HTTP \(mocked)\(requestIdentity.method.rawValue) \(requestIdentity.url)")
 
     if let requestBody = requestIdentity.requestBody {
       if requestBody.length < 1024 * 10 {
         if var currentString = NSString(data: requestBody, encoding: NSUTF8StringEncoding) as? String {
           currentString = TegHttpSensitiveText.hideSensitiveContent(currentString)
-          println("----- Request body ------\n\(currentString)\n-----")
+          print("----- Request body ------\n\(currentString)\n-----")
         }
       }
     }

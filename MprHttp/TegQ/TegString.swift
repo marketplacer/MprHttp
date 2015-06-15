@@ -18,12 +18,12 @@ public struct TegString {
     ignoreCase: Bool = false,
     ignoreDiacritic: Bool = false) -> Bool {
 
-    var options = NSStringCompareOptions.allZeros
+    var options: UInt = 0
 
-    if ignoreCase { options |= NSStringCompareOptions.CaseInsensitiveSearch }
-    if ignoreDiacritic { options |= NSStringCompareOptions.DiacriticInsensitiveSearch }
+    if ignoreCase { options |= NSStringCompareOptions.CaseInsensitiveSearch.rawValue }
+    if ignoreDiacritic { options |= NSStringCompareOptions.DiacriticInsensitiveSearch.rawValue }
 
-    return text.rangeOfString(substring, options: options) != nil
+    return text.rangeOfString(substring, options: NSStringCompareOptions(rawValue: options)) != nil
   }
   
   //

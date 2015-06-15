@@ -9,7 +9,7 @@ public class TegHttpText {
   
   public func load(identity: TegHttpRequestIdentity,
     onSuccess: (String)->(),
-    onError: ((NSError, NSHTTPURLResponse?, String?)->())? = nil,
+    onError: ((NSError?, NSHTTPURLResponse?, String?)->())? = nil,
     onAlways: (()->())? = nil) -> NSURLSessionDataTask? {
       
     return TegDownloaderMainQueue.load(identity,
@@ -24,7 +24,7 @@ public class TegHttpText {
     )
   }
   
-  public func handleSuccessResponse(data: NSData, response: NSHTTPURLResponse,
+  public func handleSuccessResponse(data: NSData?, response: NSHTTPURLResponse,
     onSuccess: (String)->(),
     onError: ((NSError, NSHTTPURLResponse?, String?)->())? = nil) {
       
@@ -45,31 +45,36 @@ public class TegHttpText {
     }
   }
   
-  public func dataToString(data: NSData) -> String? {
-    return NSString(data: data, encoding: NSUTF8StringEncoding) as? String
+  public func dataToString(data: NSData?) -> String? {
+    if let data = data {
+      return NSString(data: data, encoding: NSUTF8StringEncoding) as? String
+    }
+    
+    return nil
   }
   
   // MARK: - Logging
   // ---------------------
   
   public func logSuccessResponse(text: String) {
-    var sanitizedText = TegHttpSensitiveText.hideSensitiveContent(text)
-    println("\n----- HTTP Response ------")
-    println(sanitizedText)
-    println("-----\n")
+    let sanitizedText = TegHttpSensitiveText.hideSensitiveContent(text)
+    print("\n----- HTTP Response ------")
+    print(sanitizedText)
+    print("-----\n")
   }
   
-  public func logError(data: NSData, response: NSHTTPURLResponse) {
-    println("HTTP Error \(response.statusCode)")
+  public func logError(data: NSData?, response: NSHTTPURLResponse) {
+    print("HTTP Error \(response.statusCode)")
     
-    if let errorText = NSString(data: data, encoding: NSUTF8StringEncoding) as? String where
+    if let data = data,
+      errorText = NSString(data: data, encoding: NSUTF8StringEncoding) as? String where
       !TegString.blank(errorText) {
         
-      var sanitizedText = TegHttpSensitiveText.hideSensitiveContent(errorText)
+      let sanitizedText = TegHttpSensitiveText.hideSensitiveContent(errorText)
         
-      println("\n----- Error text ------")
-      println(sanitizedText)
-      println("-----\n")
+      print("\n----- Error text ------")
+      print(sanitizedText)
+      print("-----\n")
     }
   }
 }

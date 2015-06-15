@@ -8,8 +8,8 @@ import Foundation
 
 class TegDownloaderMainQueue {
   class func load(requestIdentity: TegHttpRequestIdentity,
-    onSuccess: (NSData, NSHTTPURLResponse)->(),
-    onError: ((NSError, NSHTTPURLResponse?)->())? = nil,
+    onSuccess: (NSData?, NSHTTPURLResponse)->(),
+    onError: ((NSError?, NSHTTPURLResponse?)->())? = nil,
     onAlways: (()->())? = nil) -> NSURLSessionDataTask? {
 
     return TegDownloaderAsync.load(requestIdentity,
