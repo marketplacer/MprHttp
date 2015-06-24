@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BDB17401B3A5A7C00C2779E /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EA61BF71B2A9259005395C7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2BDB17411B3A5A7E00C2779E /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EA61BF81B2A9259005395C7 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2BDB17421B3A5A8200C2779E /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EA61BF01B2A8195005395C7 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7E7361B71B2A4B36007BD5EF /* MprHttp.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E7361B61B2A4B36007BD5EF /* MprHttp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E7361BD1B2A4B36007BD5EF /* MprHttp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7361B11B2A4B36007BD5EF /* MprHttp.framework */; };
 		7E7361D81B2A4BB8007BD5EF /* TegDownloaderAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361CD1B2A4BB8007BD5EF /* TegDownloaderAsync.swift */; };
@@ -26,14 +29,11 @@
 		7EA61BEE1B2A8100005395C7 /* StubHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA61BED1B2A8100005395C7 /* StubHttp.swift */; };
 		7EA61BF11B2A8195005395C7 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA61BF01B2A8195005395C7 /* OHHTTPStubs.framework */; };
 		7EA61BF21B2A81D3005395C7 /* TegString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361E51B2A4BD1007BD5EF /* TegString.swift */; };
-		7EA61BF41B2A8247005395C7 /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EA61BF01B2A8195005395C7 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7EA61BF61B2A82E2005395C7 /* TegHttpSensitiveTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA61BF51B2A82E2005395C7 /* TegHttpSensitiveTextTests.swift */; };
 		7EA61BFD1B2A929C005395C7 /* TegHttpRequestIdentitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA61BFB1B2A929C005395C7 /* TegHttpRequestIdentitySpec.swift */; };
 		7EA61BFE1B2A929C005395C7 /* TegHttpHeaderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA61BFC1B2A929C005395C7 /* TegHttpHeaderSpec.swift */; };
 		7EA61BFF1B2A92C3005395C7 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA61BF81B2A9259005395C7 /* Quick.framework */; };
 		7EA61C001B2A92C5005395C7 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA61BF71B2A9259005395C7 /* Nimble.framework */; };
-		7EA61C011B2A92CD005395C7 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EA61BF71B2A9259005395C7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7EA61C021B2A92D0005395C7 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EA61BF81B2A9259005395C7 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,9 +53,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7EA61C021B2A92D0005395C7 /* Quick.framework in CopyFiles */,
-				7EA61C011B2A92CD005395C7 /* Nimble.framework in CopyFiles */,
-				7EA61BF41B2A8247005395C7 /* OHHTTPStubs.framework in CopyFiles */,
+				2BDB17421B3A5A8200C2779E /* OHHTTPStubs.framework in CopyFiles */,
+				2BDB17411B3A5A7E00C2779E /* Quick.framework in CopyFiles */,
+				2BDB17401B3A5A7C00C2779E /* Nimble.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +266,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Marketplacer;
 				TargetAttributes = {
 					7E7361B01B2A4B36007BD5EF = {
@@ -379,6 +379,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -461,6 +462,7 @@
 				INFOPLIST_FILE = MprHttp/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -482,6 +484,7 @@
 				INFOPLIST_FILE = MprHttp/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -501,6 +504,7 @@
 				);
 				INFOPLIST_FILE = MprHttpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -515,6 +519,7 @@
 				);
 				INFOPLIST_FILE = MprHttpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
