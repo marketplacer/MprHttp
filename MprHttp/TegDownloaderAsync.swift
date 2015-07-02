@@ -43,19 +43,9 @@ public class TegDownloaderAsync {
       return respondWithMockedData(mockedResponse, nsUrl: nsUrl,
         requestIdentity: requestIdentity, onSuccess: onSuccess)
     }
-
-    let urlRequest = NSMutableURLRequest(URL: nsUrl)
-    urlRequest.HTTPMethod = requestIdentity.method.rawValue
-    urlRequest.HTTPBody = requestIdentity.requestBody
       
-    if requestIdentity.contentType != TegHttpContentType.Unspecified {
-      urlRequest.addValue(requestIdentity.contentType.rawValue, forHTTPHeaderField: "Content-Type")
-    }
+    let urlRequest = requestIdentity.urlRequest
 
-    for httpHeader in requestIdentity.httpHeaders {
-      urlRequest.addValue(httpHeader.value, forHTTPHeaderField: httpHeader.field)
-    }
-      
     let task = TegDownloaderSession.session.dataTaskWithRequest(urlRequest) {
       (data, response, error) in
       

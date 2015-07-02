@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2BDB17401B3A5A7C00C2779E /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EA61BF71B2A9259005395C7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2BDB17411B3A5A7E00C2779E /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EA61BF81B2A9259005395C7 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2B4816161B46058B00F6EF02 /* TegHttpHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA61BFC1B2A929C005395C7 /* TegHttpHeaderTests.swift */; };
 		2BDB17421B3A5A8200C2779E /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EA61BF01B2A8195005395C7 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7E7361B71B2A4B36007BD5EF /* MprHttp.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E7361B61B2A4B36007BD5EF /* MprHttp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E7361BD1B2A4B36007BD5EF /* MprHttp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7361B11B2A4B36007BD5EF /* MprHttp.framework */; };
@@ -30,10 +29,7 @@
 		7EA61BF11B2A8195005395C7 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA61BF01B2A8195005395C7 /* OHHTTPStubs.framework */; };
 		7EA61BF21B2A81D3005395C7 /* TegString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7361E51B2A4BD1007BD5EF /* TegString.swift */; };
 		7EA61BF61B2A82E2005395C7 /* TegHttpSensitiveTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA61BF51B2A82E2005395C7 /* TegHttpSensitiveTextTests.swift */; };
-		7EA61BFD1B2A929C005395C7 /* TegHttpRequestIdentitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA61BFB1B2A929C005395C7 /* TegHttpRequestIdentitySpec.swift */; };
-		7EA61BFE1B2A929C005395C7 /* TegHttpHeaderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA61BFC1B2A929C005395C7 /* TegHttpHeaderSpec.swift */; };
-		7EA61BFF1B2A92C3005395C7 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA61BF81B2A9259005395C7 /* Quick.framework */; };
-		7EA61C001B2A92C5005395C7 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA61BF71B2A9259005395C7 /* Nimble.framework */; };
+		7EA61BFD1B2A929C005395C7 /* TegHttpRequestIdentityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA61BFB1B2A929C005395C7 /* TegHttpRequestIdentityTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +50,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2BDB17421B3A5A8200C2779E /* OHHTTPStubs.framework in CopyFiles */,
-				2BDB17411B3A5A7E00C2779E /* Quick.framework in CopyFiles */,
-				2BDB17401B3A5A7C00C2779E /* Nimble.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,10 +78,8 @@
 		7EA61BED1B2A8100005395C7 /* StubHttp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubHttp.swift; sourceTree = "<group>"; };
 		7EA61BF01B2A8195005395C7 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = SOURCE_ROOT; };
 		7EA61BF51B2A82E2005395C7 /* TegHttpSensitiveTextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpSensitiveTextTests.swift; sourceTree = "<group>"; };
-		7EA61BF71B2A9259005395C7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
-		7EA61BF81B2A9259005395C7 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
-		7EA61BFB1B2A929C005395C7 /* TegHttpRequestIdentitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpRequestIdentitySpec.swift; sourceTree = "<group>"; };
-		7EA61BFC1B2A929C005395C7 /* TegHttpHeaderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpHeaderSpec.swift; sourceTree = "<group>"; };
+		7EA61BFB1B2A929C005395C7 /* TegHttpRequestIdentityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpRequestIdentityTests.swift; sourceTree = "<group>"; };
+		7EA61BFC1B2A929C005395C7 /* TegHttpHeaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpHeaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EA61C001B2A92C5005395C7 /* Nimble.framework in Frameworks */,
 				7E7361BD1B2A4B36007BD5EF /* MprHttp.framework in Frameworks */,
 				7EA61BF11B2A8195005395C7 /* OHHTTPStubs.framework in Frameworks */,
-				7EA61BFF1B2A92C3005395C7 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,8 +156,8 @@
 				7EA61BEC1B2A80F8005395C7 /* TestHelpers */,
 				7EA61BF51B2A82E2005395C7 /* TegHttpSensitiveTextTests.swift */,
 				7EA61BEA1B2A80A5005395C7 /* TegHttpTextTests.swift */,
-				7EA61BFB1B2A929C005395C7 /* TegHttpRequestIdentitySpec.swift */,
-				7EA61BFC1B2A929C005395C7 /* TegHttpHeaderSpec.swift */,
+				7EA61BFB1B2A929C005395C7 /* TegHttpRequestIdentityTests.swift */,
+				7EA61BFC1B2A929C005395C7 /* TegHttpHeaderTests.swift */,
 				7E7361C11B2A4B36007BD5EF /* Supporting Files */,
 			);
 			path = MprHttpTests;
@@ -201,8 +191,6 @@
 		7EA61BEF1B2A818D005395C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7EA61BF71B2A9259005395C7 /* Nimble.framework */,
-				7EA61BF81B2A9259005395C7 /* Quick.framework */,
 				7EA61BF01B2A8195005395C7 /* OHHTTPStubs.framework */,
 			);
 			path = Frameworks;
@@ -338,11 +326,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EA61BF61B2A82E2005395C7 /* TegHttpSensitiveTextTests.swift in Sources */,
+				2B4816161B46058B00F6EF02 /* TegHttpHeaderTests.swift in Sources */,
 				7EA61BEB1B2A80A5005395C7 /* TegHttpTextTests.swift in Sources */,
 				7EA61BF21B2A81D3005395C7 /* TegString.swift in Sources */,
 				7EA61BEE1B2A8100005395C7 /* StubHttp.swift in Sources */,
-				7EA61BFE1B2A929C005395C7 /* TegHttpHeaderSpec.swift in Sources */,
-				7EA61BFD1B2A929C005395C7 /* TegHttpRequestIdentitySpec.swift in Sources */,
+				7EA61BFD1B2A929C005395C7 /* TegHttpRequestIdentityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,7 +1,7 @@
 import XCTest
 import MprHttp
 
-class TegHttpTextSpec: XCTestCase {
+class TegHttpTextTests: XCTestCase {
   var obj: TegHttpText!
   
   override func setUp() {
@@ -105,5 +105,31 @@ class TegHttpTextSpec: XCTestCase {
     XCTAssertEqual("NSURLErrorDomain", repoteError!.domain)
     XCTAssert(remoteErrorBody == nil)
     XCTAssert(remoteResponse == nil)
+  }
+  
+  func testLoadAsync() {
+    var remoteText: String?
+    var errorFired = false
+    
+    StubHttp.withText("Hello", forUrlPart: "server.com")
+    let identity = TegHttpRequestIdentity(url: "http://server.com/")
+    let expectation = expectationWithDescription("HTTP response received")
+    
+    obj.loadAsync(identity,
+      onSuccess: { text in
+        remoteText = text
+      },
+      onError: { error, reponse, body in
+        errorFired = true
+      },
+      onAlways: {
+        expectation.fulfill()
+      }
+    )
+    
+    waitForExpectationsWithTimeout(1) { error in }
+    
+    XCTAssertEqual("Hello", remoteText!)
+    XCTAssertFalse(errorFired)
   }
 }

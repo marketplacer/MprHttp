@@ -1,18 +1,40 @@
-//
-//  Sends HTTP request and gets a text response.
-//
+
 
 import Foundation
 
+/**
+
+Sends HTTP request and gets a text response.
+
+*/
 public class TegHttpText {
   public init() { }
   
+  /// Loads text from remote source. The callbacks are called in the main queue.
   public func load(identity: TegHttpRequestIdentity,
     onSuccess: (String)->(),
     onError: ((NSError?, NSHTTPURLResponse?, String?)->())? = nil,
     onAlways: (()->())? = nil) -> NSURLSessionDataTask? {
       
     return TegDownloaderMainQueue.load(identity,
+      onSuccess: { [weak self] (data, response) in
+        self?.handleSuccessResponse(data,
+          response: response, onSuccess: onSuccess, onError: onError)
+      },
+      onError: { error, response in
+        onError?(error, response, nil)
+      },
+      onAlways: onAlways
+    )
+  }
+  
+  /// Loads text from remote source. The callbacks are called asynchronously.
+  public func loadAsync(identity: TegHttpRequestIdentity,
+    onSuccess: (String)->(),
+    onError: ((NSError?, NSHTTPURLResponse?, String?)->())? = nil,
+    onAlways: (()->())? = nil) -> NSURLSessionDataTask? {
+      
+    return TegDownloaderAsync.load(identity,
       onSuccess: { [weak self] (data, response) in
         self?.handleSuccessResponse(data,
           response: response, onSuccess: onSuccess, onError: onError)
