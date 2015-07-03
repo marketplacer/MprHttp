@@ -12,6 +12,8 @@ public struct TegHttpRequestIdentity
   public let contentType: TegHttpContentType
   public let httpHeaders: [TegHttpHeader]
   public let mockedResponse: String?
+  
+  /// An optional logger function that will be called during request and response
   public var logger: TegHttpLoggerCallback?
 
   public init(url: String,

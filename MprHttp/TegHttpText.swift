@@ -93,6 +93,6 @@ public class TegHttpText {
       reponseText = errorText
     }
     
-    identity.logger?(reponseText, .ErrorResponseBody, response.statusCode)
+    identity.logger?(reponseText, .ResponseErrorBody, response.statusCode)
   }
 }

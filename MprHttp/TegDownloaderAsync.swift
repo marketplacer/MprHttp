@@ -75,7 +75,9 @@ public class TegDownloaderAsync {
     onError: ((NSError?, NSHTTPURLResponse?)->())? = nil) {
     
     let errorMessage = error?.description ?? "Unknown error"
-    requestIdentity.logger?(errorMessage, .ErrorHttp, httpResponse?.statusCode)
+      
+      
+    requestIdentity.logger?(errorMessage, .ResponseHttpError, httpResponse?.statusCode)
 
     onError?(error, httpResponse)
   }
@@ -101,7 +103,7 @@ public class TegDownloaderAsync {
     let mocked = requestIdentity.mockedResponse == nil ? "" : "Mocked "
     let message = "\(mocked)\(requestIdentity.method.rawValue) \(requestIdentity.url)"
     
-    requestIdentity.logger?(message, .RequestUrlAndMethod, nil)
+    requestIdentity.logger?(message, .RequestMethodAndUrl, nil)
 
     if let requestBody = requestIdentity.requestBody {
       if let currentString = NSString(data: requestBody, encoding: NSUTF8StringEncoding) as? String {

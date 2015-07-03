@@ -43,3 +43,14 @@ let identity = TegHttpRequestIdentity(
 )
 ```
 
+### Logging
+
+One can assign a closure to the identity's `logger` property to get the log messages for requests and reponses.
+
+```Swift
+let identity = TegHttpRequestIdentity(url: "http://server.com/")
+identity.logger = { message, logType, statusCode in
+  // Save the log message
+}
+```
+
