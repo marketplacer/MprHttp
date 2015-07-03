@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2B4816161B46058B00F6EF02 /* TegHttpHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA61BFC1B2A929C005395C7 /* TegHttpHeaderTests.swift */; };
+		2BD35E841B4614D200B33129 /* TegHttpLogTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD35E831B4614D200B33129 /* TegHttpLogTypes.swift */; };
+		2BD35E861B46178B00B33129 /* TegHttpLoggerCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD35E851B46178B00B33129 /* TegHttpLoggerCallback.swift */; };
+		2BD35E881B461B1300B33129 /* TegHttpTextLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD35E871B461B1300B33129 /* TegHttpTextLoggerTests.swift */; };
 		2BDB17421B3A5A8200C2779E /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EA61BF01B2A8195005395C7 /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7E7361B71B2A4B36007BD5EF /* MprHttp.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E7361B61B2A4B36007BD5EF /* MprHttp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7E7361BD1B2A4B36007BD5EF /* MprHttp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7361B11B2A4B36007BD5EF /* MprHttp.framework */; };
@@ -56,6 +59,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2BD35E831B4614D200B33129 /* TegHttpLogTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpLogTypes.swift; sourceTree = "<group>"; };
+		2BD35E851B46178B00B33129 /* TegHttpLoggerCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpLoggerCallback.swift; sourceTree = "<group>"; };
+		2BD35E871B461B1300B33129 /* TegHttpTextLoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegHttpTextLoggerTests.swift; sourceTree = "<group>"; };
 		7E7361B11B2A4B36007BD5EF /* MprHttp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MprHttp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7361B51B2A4B36007BD5EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E7361B61B2A4B36007BD5EF /* MprHttp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MprHttp.h; sourceTree = "<group>"; };
@@ -131,6 +137,8 @@
 				7E7361D11B2A4BB8007BD5EF /* TegHttpContentType.swift */,
 				7E7361CF1B2A4BB8007BD5EF /* TegHttpErrors.swift */,
 				7E7361D21B2A4BB8007BD5EF /* TegHttpHeader.swift */,
+				2BD35E831B4614D200B33129 /* TegHttpLogTypes.swift */,
+				2BD35E851B46178B00B33129 /* TegHttpLoggerCallback.swift */,
 				7E7361D31B2A4BB8007BD5EF /* TegHttpMethod.swift */,
 				7E7361D41B2A4BB8007BD5EF /* TegHttpRequestIdentity.swift */,
 				7E7361D51B2A4BB8007BD5EF /* TegHttpSensitiveText.swift */,
@@ -156,6 +164,7 @@
 				7EA61BEC1B2A80F8005395C7 /* TestHelpers */,
 				7EA61BF51B2A82E2005395C7 /* TegHttpSensitiveTextTests.swift */,
 				7EA61BEA1B2A80A5005395C7 /* TegHttpTextTests.swift */,
+				2BD35E871B461B1300B33129 /* TegHttpTextLoggerTests.swift */,
 				7EA61BFB1B2A929C005395C7 /* TegHttpRequestIdentityTests.swift */,
 				7EA61BFC1B2A929C005395C7 /* TegHttpHeaderTests.swift */,
 				7E7361C11B2A4B36007BD5EF /* Supporting Files */,
@@ -312,11 +321,13 @@
 				7E7361DC1B2A4BB8007BD5EF /* TegHttpContentType.swift in Sources */,
 				7E7361D91B2A4BB8007BD5EF /* TegDownloaderMainQueue.swift in Sources */,
 				7E7361DD1B2A4BB8007BD5EF /* TegHttpHeader.swift in Sources */,
+				2BD35E841B4614D200B33129 /* TegHttpLogTypes.swift in Sources */,
 				7E7361DA1B2A4BB8007BD5EF /* TegHttpErrors.swift in Sources */,
 				7E7361E91B2A4BF4007BD5EF /* TegString.swift in Sources */,
 				7E7361E11B2A4BB8007BD5EF /* TegHttpText.swift in Sources */,
 				7E7361E81B2A4BE6007BD5EF /* TegQ.swift in Sources */,
 				7E7361E01B2A4BB8007BD5EF /* TegHttpSensitiveText.swift in Sources */,
+				2BD35E861B46178B00B33129 /* TegHttpLoggerCallback.swift in Sources */,
 				7E7361D81B2A4BB8007BD5EF /* TegDownloaderAsync.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +342,7 @@
 				7EA61BF21B2A81D3005395C7 /* TegString.swift in Sources */,
 				7EA61BEE1B2A8100005395C7 /* StubHttp.swift in Sources */,
 				7EA61BFD1B2A929C005395C7 /* TegHttpRequestIdentityTests.swift in Sources */,
+				2BD35E881B461B1300B33129 /* TegHttpTextLoggerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

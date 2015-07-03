@@ -18,7 +18,7 @@ public class TegHttpText {
       
     return TegDownloaderMainQueue.load(identity,
       onSuccess: { [weak self] (data, response) in
-        self?.handleSuccessResponse(data,
+        self?.handleSuccessResponse(identity, data: data,
           response: response, onSuccess: onSuccess, onError: onError)
       },
       onError: { error, response in
@@ -36,7 +36,7 @@ public class TegHttpText {
       
     return TegDownloaderAsync.load(identity,
       onSuccess: { [weak self] (data, response) in
-        self?.handleSuccessResponse(data,
+        self?.handleSuccessResponse(identity, data: data,
           response: response, onSuccess: onSuccess, onError: onError)
       },
       onError: { error, response in
@@ -46,7 +46,8 @@ public class TegHttpText {
     )
   }
   
-  public func handleSuccessResponse(data: NSData?, response: NSHTTPURLResponse,
+  public func handleSuccessResponse(identity: TegHttpRequestIdentity,
+    data: NSData?, response: NSHTTPURLResponse,
     onSuccess: (String)->(),
     onError: ((NSError, NSHTTPURLResponse?, String?)->())? = nil) {
       
@@ -54,14 +55,14 @@ public class TegHttpText {
       
     if response.statusCode != 200 {
       // Response is received successfully but its HTTP status is not 200
-      logError(data, response: response)
+      logError(identity, data: data, response: response)
       onError?(TegHttpError.Not200FromServer.nsError, response, bodyText)
       return
     }
     
     if let bodyText = bodyText {
       onSuccess(bodyText)
-      logSuccessResponse(bodyText)
+      logSuccessResponse(identity, bodyText: bodyText, statusCode: response.statusCode)
     } else {
       onError?(TegHttpError.FailedToConvertResponseToText.nsError, response, nil)
     }
@@ -78,25 +79,20 @@ public class TegHttpText {
   // MARK: - Logging
   // ---------------------
   
-  public func logSuccessResponse(text: String) {
-    let sanitizedText = TegHttpSensitiveText.hideSensitiveContent(text)
-    print("\n----- HTTP Response ------")
-    print(sanitizedText)
-    print("-----\n")
+  public func logSuccessResponse(identity: TegHttpRequestIdentity, bodyText: String, statusCode: Int) {
+    identity.logger?(bodyText, .ResponseSuccessBody, statusCode)
   }
   
-  public func logError(data: NSData?, response: NSHTTPURLResponse) {
-    print("HTTP Error \(response.statusCode)")
+  public func logError(identity: TegHttpRequestIdentity, data: NSData?, response: NSHTTPURLResponse) {
+    var reponseText = "Empty response"
     
     if let data = data,
       errorText = NSString(data: data, encoding: NSUTF8StringEncoding) as? String where
       !TegString.blank(errorText) {
         
-      let sanitizedText = TegHttpSensitiveText.hideSensitiveContent(errorText)
-        
-      print("\n----- Error text ------")
-      print(sanitizedText)
-      print("-----\n")
+      reponseText = errorText
     }
+    
+    identity.logger?(reponseText, .ErrorResponseBody, response.statusCode)
   }
 }

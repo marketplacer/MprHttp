@@ -2,7 +2,7 @@
 
 ## TegHttpText
 
-Loads text from remote source.
+This library is a collection of methods for loading text from remote source. It works as a wrapper around `NSURLSession` and provides shorter syntax.
 
 
 ```Swift

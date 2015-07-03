@@ -3,7 +3,7 @@
 //
 
 public struct TegHttpSensitiveText {
-  private static let sensitiveMessages = [
+  private static var sensitiveMessages = [
     "token",
     "nonce",
     "key"

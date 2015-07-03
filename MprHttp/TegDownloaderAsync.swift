@@ -27,7 +27,8 @@ public class TegDownloaderAsync {
         alwaysHandler()
       }
       
-      processError(TegHttpError.CouldNotParseUrlString.nsError, httpResponse: nil, onError: onError)
+      processError(requestIdentity,
+        error: TegHttpError.CouldNotParseUrlString.nsError, httpResponse: nil, onError: onError)
     }
     
     return nil
@@ -53,10 +54,10 @@ public class TegDownloaderAsync {
         if error == nil {
           onSuccess(data, httpResponse)
         } else {
-          self.processError(error, httpResponse: httpResponse, onError: onError)
+          self.processError(requestIdentity, error: error, httpResponse: httpResponse, onError: onError)
         }
       } else {
-        self.processError(error, httpResponse: nil, onError: onError)
+        self.processError(requestIdentity, error: error, httpResponse: nil, onError: onError)
       }
       
       if let alwaysHandler = onAlways {
@@ -69,15 +70,13 @@ public class TegDownloaderAsync {
     return task
   }
   
-  private class func processError(error: NSError?, httpResponse: NSHTTPURLResponse?,
+  private class func processError(requestIdentity: TegHttpRequestIdentity,
+    error: NSError?, httpResponse: NSHTTPURLResponse?,
     onError: ((NSError?, NSHTTPURLResponse?)->())? = nil) {
     
-    if let error = error {
-      print("HTTP Error: \(error.description)")
-    } else {
-      print("HTTP Error occured")
-    }
-      
+    let errorMessage = error?.description ?? "Unknown error"
+    requestIdentity.logger?(errorMessage, .ErrorHttp, httpResponse?.statusCode)
+
     onError?(error, httpResponse)
   }
 
@@ -100,14 +99,13 @@ public class TegDownloaderAsync {
   
   private class func logRequest(requestIdentity: TegHttpRequestIdentity) {
     let mocked = requestIdentity.mockedResponse == nil ? "" : "Mocked "
-    print("HTTP \(mocked)\(requestIdentity.method.rawValue) \(requestIdentity.url)")
+    let message = "\(mocked)\(requestIdentity.method.rawValue) \(requestIdentity.url)"
+    
+    requestIdentity.logger?(message, .RequestUrlAndMethod, nil)
 
     if let requestBody = requestIdentity.requestBody {
-      if requestBody.length < 1024 * 10 {
-        if var currentString = NSString(data: requestBody, encoding: NSUTF8StringEncoding) as? String {
-          currentString = TegHttpSensitiveText.hideSensitiveContent(currentString)
-          print("----- Request body ------\n\(currentString)\n-----")
-        }
+      if let currentString = NSString(data: requestBody, encoding: NSUTF8StringEncoding) as? String {
+        requestIdentity.logger?(currentString, .RequestBody, nil)
       }
     }
   }

@@ -38,9 +38,11 @@ class TegHttpRequestIdentityTests: XCTestCase {
     let header = TegHttpHeader(field: "test-field", value: "test-value")
     let data = NSData()
 
-    let identityToCopy = TegHttpRequestIdentity(url: "http://www.test-url.com",
+    var identityToCopy = TegHttpRequestIdentity(url: "http://www.test-url.com",
       method: TegHttpMethod.Get, requestBody: data, contentType: TegHttpContentType.Json,
       httpHeaders: [], mockedResponse: "test-mocked-response")
+    
+    identityToCopy.logger = { text in }
     
     let identity = TegHttpRequestIdentity(identityToCopy: identityToCopy, httpHeaders: [header])
     
@@ -49,6 +51,7 @@ class TegHttpRequestIdentityTests: XCTestCase {
     XCTAssert(data === identity.requestBody!)
     XCTAssertEqual(TegHttpContentType.Json, identity.contentType)
     XCTAssertEqual(1, identity.httpHeaders.count)
+    XCTAssert(identity.logger != nil )
     XCTAssert(header == identity.httpHeaders[0])
     XCTAssertEqual("test-mocked-response", identity.mockedResponse!)
   }

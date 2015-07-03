@@ -12,6 +12,7 @@ public struct TegHttpRequestIdentity
   public let contentType: TegHttpContentType
   public let httpHeaders: [TegHttpHeader]
   public let mockedResponse: String?
+  public var logger: TegHttpLoggerCallback?
 
   public init(url: String,
     method: TegHttpMethod,
@@ -43,6 +44,7 @@ public struct TegHttpRequestIdentity
     requestBody = identityToCopy.requestBody
     contentType = identityToCopy.contentType
     mockedResponse = identityToCopy.mockedResponse
+    logger = identityToCopy.logger
     self.httpHeaders = httpHeaders
   }
 
