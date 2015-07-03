@@ -54,3 +54,14 @@ identity.logger = { message, logType, statusCode in
 }
 ```
 
+### Hiding sensitive log information
+
+Here is how to hide sensitive text from the log messages.
+
+```Swift
+TegHttpSensitiveText.sensitiveMessages = ["token", "nonce", "key"]
+
+let sanitized = TegHttpSensitiveText.hideSensitiveContent("Authentication Token: a23bff1923")
+// sanitized => "****** hidden ******"
+```
+
