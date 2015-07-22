@@ -121,7 +121,7 @@ class TegHttpTextLoggerTests: XCTestCase {
     XCTAssertEqual(TegHttpLogTypes.RequestMethodAndUrl, logTypes[0])
     XCTAssert(statusCodes[0] == nil)
     
-    XCTAssertEqual("Error Domain=NSURLErrorDomain Code=-1009 \"The operation couldn’t be completed. (NSURLErrorDomain error -1009.)\"", httpLogMessages[1])
+    XCTAssertEqual("Error Domain=NSURLErrorDomain Code=-1009 \"(null)\"", httpLogMessages[1])
 
     XCTAssertEqual(TegHttpLogTypes.ResponseHttpError, logTypes[1])
     XCTAssert(statusCodes[1] == nil)

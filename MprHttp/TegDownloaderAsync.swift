@@ -65,7 +65,7 @@ public class TegDownloaderAsync {
       }
     }
       
-    task?.resume()
+    task.resume()
       
     return task
   }
